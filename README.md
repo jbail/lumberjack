@@ -5,7 +5,7 @@ Lumberjack hijacks the browser console and enhances it so logs can be split into
 ## Getting Started
 
 1. Copy lumberjack.js into your project.
-2. That's it! It just works.
+2. That's it!
 
 ## What is Lumberjack?
 
@@ -30,14 +30,16 @@ console.stream('dog').off();
 //or
 console.off('dog');
 
-console.stream('dog').log('Bark! Bark! Bark!'); //not going to appear in the console
+console.stream('dog').log('Bark! Bark! Bark!'); //this message is not going to appear in the console
 ```
 
 Even if you turn off a stream, all statements logged to it are still being recorded behind the scenes by Lumberjack. At any point while your application is running you can audit all the log statements like so:
 
 ```
-console.stream('dog').logs(); //returns an Array of everything logged to the 'dog' stream
+console.stream('dog').logs(); //returns an Array of every message logged to the 'dog' stream
 ```
+
+Lumberjack supports all the semantic console logging functions: console.log, console.info, console.dir, console.warn and console.error. 
 
 ## Author
 
