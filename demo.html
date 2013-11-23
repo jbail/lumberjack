@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<title>Lumberjack Demo Page</title>
+<script type="text/javascript" src="scripts/lumberjack.js"></script>
+<script type="text/javascript">
+console.log('Lovely day isn\'t it?');
+
+console.stream('dog').info('Hooooooooooowl!!!');
+
+console.dir({temp: 85, sunny: true, hourly: [65, 70, 75, 80, 85]});
+
+//the two statements below are equivalent
+console.stream('cat').off();
+console.off('cat'); 
+
+console.stream('cat').warn('You are out of catnip!'); //should not see this since the 'cat' stream is off
+
+console.stream('dog').info('Woof! Woof!');
+
+//the two statements below are equivalent
+console.stream('cat').on();
+console.on('cat'); 
+
+console.stream('cat').warn('Um guys? I think I just heard a dog.');
+
+console.stream('cat').warn('Hiss!');
+
+console.stream('cat').error('Here he comes. Run!');
+
+console.log('I would like to see everything the cat said.');
+
+console.stream('cat').logs();
+
+console.log('How about everything the dog said?');
+
+console.stream('dog').logs();
+</script>
+</head>
+<body>
+
+<p>Open your browser console...</p>
+
+</body>
+</html>
