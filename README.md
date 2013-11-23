@@ -47,3 +47,7 @@ Lumberjack supports all the semantic console logging functions: console.log, con
 
 + <https://twitter.com/jeffabail>
 + <https://github.com/jbail>
+
+## License
+
+Lumberjack is licensed under the MIT Open Source license. <http://opensource.org/licenses/MIT>
