@@ -13,7 +13,7 @@ Browser based applications with lots of JavaScript often result in lots of loggi
 
 ## Usage
 
-Instead of logging everything with console.log, Lumberjack encourages you to split your logs into bitesized chunks that map to your application's functionality. In Lumberjack, these are called *streams*. Streams organize your logging by name. For example:
+Instead of logging everything with console.log, Lumberjack encourages you to split your logs into bite-sized chunks that map to your application's functionality. In Lumberjack, these are called *streams*. Streams organize your logging by name. For example:
 
 ```
 console.stream('cat').info('I do not like you.');
