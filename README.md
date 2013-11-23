@@ -9,11 +9,11 @@ Lumberjack hijacks the browser console and enhances it so logs can be split into
 
 ## What is Lumberjack?
 
-Browser based applications with lots of JavaScript often result in lots of logging. Unfortunately, the single stream logging built into modern web browsers (through console.log) gets noisy as more and more events are logged. In can become difficult to even follow the logs. Lumberjack aims to fix that.
+Browser based applications with lots of JavaScript often result in lots of logging. Unfortunately, the single stream logging built into modern web browsers (through console.log) gets noisy as more and more messages are logged. In can become difficult to even follow the logs. Lumberjack aims to fix that.
 
 ## Usage
 
-Instead of logging everything with console.log, Lumberjack encourages you to split your logs into bitesized chunks that map to your applications functionality. In Lumberjack, these are called *streams*. Streams aggregate all your logging under a string name. For example:
+Instead of logging everything with console.log, Lumberjack encourages you to split your logs into bitesized chunks that map to your application's functionality. In Lumberjack, these are called *streams*. Streams organize your logging by name. For example:
 
 ```
 console.stream('cat').info('I do not like you.');
