@@ -23,7 +23,7 @@ console.stream('dog').info('The feeling is mutual.');
 console.stream('dog').warn('Woof!');
 ```
 
-With Lumberjack you can turn on or off logging globally or for specific sections of your code. If we don't want to hear the dog bark anymore, we can do this:
+With Lumberjack you can turn on or off logging globally or for specific sections of your code. If you don't want to hear the dog bark anymore, you can do this:
 
 ```
 console.stream('dog').off();
