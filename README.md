@@ -30,13 +30,25 @@ console.stream('dog').off();
 //or
 console.off('dog');
 
-console.stream('dog').log('Bark! Bark! Bark!'); //this message is not going to appear in the console
+console.stream('dog').log('Bark! Bark! Bark!'); //this message isn't going to appear in the console
 ```
 
 Even if you turn off a stream, all statements logged to it are still being recorded behind the scenes by Lumberjack. At any point while your application is running you can audit all the log statements like so:
 
 ```
 console.stream('dog').logs(); //returns an Array of every message logged to the 'dog' stream
+```
+
+Conversely, if you want to turn a stream on, it's just as easy:
+
+```
+console.stream('rooster').log('qui-qui-ri-qui!'); //this message isn't going to appear in the console
+
+console.stream('rooster').on();
+//or
+console.on('rooster');
+
+console.stream('rooster').log('COCKADOODLEDOO!'); //this message will appear in the console
 ```
 
 Lumberjack supports all the semantic console logging functions: console.log, console.info, console.dir, console.warn and console.error. 
