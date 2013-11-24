@@ -4,37 +4,35 @@
 <title>Lumberjack Demo Page</title>
 <script type="text/javascript" src="scripts/lumberjack.js"></script>
 <script type="text/javascript">
-console.log('Lovely day isn\'t it?');
 
-console.stream('dog').info('Hooooooooooowl!!!');
+var cat = console.stream('cat');
 
-console.dir({temp: 85, sunny: true, hourly: [65, 70, 75, 80, 85]});
+cat.info('You are out of catnip');
+cat.warn('Hiss!');
 
-//the two statements below are equivalent
-console.stream('cat').off();
-console.off('cat'); 
+cat.off();
 
-console.stream('cat').warn('You are out of catnip!'); //should not see this since the 'cat' stream is off
+cat.log('Reminder to not walk on a hot stove again.'); //this will not appear in the console
 
-console.stream('dog').info('Woof! Woof!');
-
-//the two statements below are equivalent
 console.stream('cat').on();
-console.on('cat'); 
+//or
+cat.on();
 
-console.stream('cat').warn('Um guys? I think I just heard a dog.');
+cat.log('Also, I like chicken.');
 
-console.stream('cat').warn('Hiss!');
+//What if you have two cats?
+//Cats are very unique individuals.
+//They probably don't want to share the same logs.
+//You can give them their own like this:
 
-console.stream('cat').error('Here he comes. Run!');
+var boobie = cat.stream('boobie'), karl = cat.stream('karl');
 
-console.log('I would like to see everything the cat said.');
+boobie.info('I just heard the doorbell ring.')
+boobie.info('I am outta here!');
 
-console.stream('cat').logs();
+karl.info('Oooh! New people are coming over???');
+karl.info('How exciting! Maybe someone will pet me.')
 
-console.log('How about everything the dog said?');
-
-console.stream('dog').logs();
 </script>
 </head>
 <body>
