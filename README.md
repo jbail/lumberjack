@@ -23,6 +23,30 @@ console.stream('dog').info('The feeling is mutual.');
 console.stream('dog').warn('Woof!');
 ```
 
+Calling the "stream" method actually creates a brand new console object that you can use. This enables you to do shorthand like this:
+
+```
+var cat = console.stream('cat');
+
+cat.info('Here are some foods I like:');
+cat.log('Rabbit');
+cat.log('Chicken');
+```
+
+You can also create sub-streams off a stream.
+
+```
+var cat = console.stream('cat');
+var boobie = cat.stream('boobie');
+var karl = cat.stream('karl');
+
+boobie.warn('Hiss!');
+karl.log('Meow');
+
+cat.stream('karl').log('Zzzzzzzz...');
+cat.stream('boobie').log('I am sleepy, too');
+```
+
 With Lumberjack you can turn on or off logging globally or for specific sections of your code. If you don't want to hear the dog bark anymore, you can do this:
 
 ```
