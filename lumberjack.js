@@ -97,6 +97,14 @@
     this.error = function () {
       log(arguments, 'error');
     };  
+
+    this.color = function (color) {
+      opts.color = color;
+    }
+
+    this.background = function (background) {
+      opts.background = background;
+    }
   }
 
 

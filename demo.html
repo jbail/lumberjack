@@ -80,6 +80,28 @@ fish.info('I am hungry.');
 //but, we can view the logs easily
 var fish_logs = fish.logs(); //fish_logs will have an array of all the messages we logged
 console.log(fish_logs); //using our standard, non-disabled log to print them
+
+//if your browser supports it, the stream name will be printed to the console in color
+//these colors can be customized
+var cesar = cat.stream('cesar', {color: '#999', background: '#000'});
+var mickey = cat.stream('mickey', {color: 'orange', background: 'beige'});
+
+cesar.log('Hi, my name is Cesar.');
+mickey.log('Hi, my name is Mickey.');
+
+cesar.color('white');
+cesar.background('red');
+cesar.log('Whoa. I used to be black, but now I am red.');
+
+mickey.color('lightblue');
+mickey.background('purple');
+mickey.log('Hey look at me!');
+
+cesar.background('green');
+cesar.log('I am green with envy.');
+
+mickey.background('blue');
+mickey.log('Don\'t be blue.');
 </script>
 </head>
 <body>
