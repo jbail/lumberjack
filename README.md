@@ -4,7 +4,7 @@ Lumberjack is a JavaScript utility that hijacks the browser console and enhances
 
 ## Demo
 
-<http://jbail.github.io/lumberjack/demo.html>
+<http://jbail.github.io/lumberjack/>
 
 ## Getting Started
 
