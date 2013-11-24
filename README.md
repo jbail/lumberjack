@@ -81,6 +81,24 @@ console.stream('rooster').log('COCKADOODLEDOO!'); //this message will appear in 
 
 Lumberjack supports all the semantic console logging functions: console.log, console.info, console.dir, console.warn and console.error. 
 
+If your browser supports color in the console (which right now I believe is just Chrome and Firefox), then the stream names will appear and be colorized. This offers a little more visual distinction in the console and helps to see like messages. You can override the default colors when you create the stream or at any time.
+
+```
+var cesar = cat.stream('cesar', {color: '#999', background: '#000'});
+var mickey = cat.stream('mickey', {color: 'orange', background: 'beige'});
+
+cesar.log('Hi, my name is Cesar.');
+mickey.log('Hi, my name is Mickey.');
+
+cesar.color('white');
+cesar.background('red');
+cesar.log('Whoa. I used to be black, but now I am red.');
+
+mickey.color('lightblue');
+mickey.background('purple');
+mickey.log('Hey look at me!');
+```
+
 ## Author
 
 **Jeff Bail**
