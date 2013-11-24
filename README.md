@@ -1,6 +1,6 @@
 # Lumberjack
 
-Lumberjack hijacks the browser console and enhances it so logs can be split into more manageable chunks.
+Lumberjack is a JavaScript utility that hijacks the browser console and enhances it so logs can be split into more manageable chunks.
 
 ## Getting Started
 
