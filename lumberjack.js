@@ -11,7 +11,14 @@
 (function () {
 
   function Console(console, name, options) {
-    var opts = {enabled: options ? options.enabled : true}, streams = {}, logs = [];
+    var options = options || {},
+        opts = {
+          enabled: typeof options.enabled != 'undefined' ? options.enabled : true,
+          color: typeof options.color != 'undefined' ? options.color : '#bada55',
+          background: typeof options.background != 'undefined' ? options.background : '#111'
+        }, 
+        colorSupported = isColorSupported(),
+        streams = {}, logs = [];
 
 
 
@@ -20,7 +27,14 @@
       args = argumentsToArray(args);
       
       if (opts.enabled) {
-        console[type].apply(console, args);
+        if (colorSupported && name != undefined && type ) {
+          //hat tip: http://stackoverflow.com/questions/7505623/colors-in-javascript-console
+          args.unshift('%c ' + name + ' ', 'color:' + opts.color + '; background:' + opts.background);
+          console[type].apply(console, args);
+          args.splice(0, 1);
+        } else {
+          console[type].apply(console, args);
+        }
       }
 
       args.push(new Date()) //add timestamp
@@ -30,6 +44,13 @@
     function argumentsToArray(arguments) {
       return Array.prototype.slice.call(arguments, 0);
     };
+
+    function isColorSupported() {
+      //it feels dirty doing user agent browser detection, but i don't think 
+      //there's another way to detemine if the console supports color. 
+      var ua = navigator.userAgent.toLowerCase();
+      return ua.indexOf('firefox') != -1 || ua.indexOf('chrome') != -1;
+    }
 
 
 
