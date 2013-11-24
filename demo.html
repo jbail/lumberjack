@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<title>Lumberjack Demo Page</title>
+<script type="text/javascript" src="scripts/lumberjack.js"></script>
+<script type="text/javascript">
+console.log('Lovely day isn\'t it?');
+
+console.stream('dog').info('Hooooooooooowl!!!');
+
+console.dir({temp: 85, sunny: true, hourly: [65, 70, 75, 80, 85]});
+
+//the two statements below are equivalent
+console.stream('cat').off();
+console.off('cat'); 
+
+console.stream('cat').warn('You are out of catnip!'); //should not see this since the 'cat' stream is off
+
+console.stream('dog').info('Woof! Woof!');
+
+//the two statements below are equivalent
+console.stream('cat').on();
+console.on('cat'); 
+
+console.stream('cat').warn('Um guys? I think I just heard a dog.');
+console.stream('cat').warn('Hiss!');
+console.stream('cat').error('OK, now I\'m mad!');
+
+console.log('I would like to see everything the cat said.');
+
+console.stream('cat').logs();
+
+console.log('How about everything the dog said?');
+
+console.stream('dog').logs();
+
+var cat = console.stream('cat');
+
+cat.warn('I am tired, so please do not touch me.');
+
+console.stream('cat').off();
+//or
+cat.off();
+
+cat.log('Reminder to not walk on a hot stove again.'); //this will not appear in the console
+
+console.stream('cat').on();
+//or
+cat.on();
+
+cat.log('Also, I like chicken.');
+
+//What if you have two cats?
+//Cats are very unique individuals.
+//They probably don't want to share the same logs.
+//You can give them their own.
+
+var boobie = cat.stream('boobie'), karl = cat.stream('karl');
+
+boobie.info('I just heard the doorbell ring.')
+boobie.info('I am outta here!');
+
+karl.info('Oooh! New people are coming over???');
+karl.info('How exciting! Maybe someone will pet me.');
+
+//You can also made a silent log.
+//Nothing gets printed into the console, but at any time
+//you can request to see its logs using the logs method.
+//Additionally, a date object is instantiated and stored 
+//as the last argument with each log so when auditing your 
+//logs, you can see when certain logs happened.
+
+var fish = console.stream('fish', {enabled: false}); //passing an options argument with enabled false will set the stream to 'off'
+
+//none of the statements below will appear in the log
+fish.log('Blub, blub');
+fish.warn('Splash!');
+fish.info('I am hungry.');
+
+//but, we can view the logs easily
+var fish_logs = fish.logs(); //fish_logs will have an array of all the messages we logged
+console.log(fish_logs); //using our standard, non-disabled log to print them
+</script>
+</head>
+<body>
+
+<p>Open your browser console...</p>
+
+</body>
+</html>
