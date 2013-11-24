@@ -11,6 +11,10 @@ Lumberjack is a JavaScript utility that hijacks the browser console and enhances
 
 Browser based applications with lots of JavaScript often result in lots of logging. Unfortunately, the single stream logging built into modern web browsers (through console.log) gets noisy as more and more messages are logged. In can become difficult to even follow the logs. Lumberjack aims to fix that.
 
+## Demo
+
+<http://jbail.github.io/lumberjack/demo.html>
+
 ## Usage
 
 Instead of logging everything with console.log, Lumberjack encourages you to split your logs into bite-sized chunks that map to your application's functionality. In Lumberjack, these are called *streams*. Streams organize your logging by name. For example:
