@@ -83,7 +83,7 @@ Lumberjack supports all the semantic console logging functions: console.log, con
 
 ## Color in Your Console
 
-If your browser supports color in the console (which right is just Chrome and Firefox), then the stream names will appear and be colorized. This offers a little more visual distinction which can make your console easier to read. You can override the default colors when you create the stream, or at any time.
+If your browser supports color in the console (at the moment this is Chrome and Firefox), then the stream names will appear and be colorized. This offers a little more visual distinction which can make your console easier to read. You can override the default colors when you create the stream, or at any time.
 
 ```
 var cesar = cat.stream('cesar', {color: '#999', background: '#000'});
