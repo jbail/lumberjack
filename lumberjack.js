@@ -66,12 +66,20 @@
       return stream;
     };
 
-    this.on = function () {
-      opts.enabled = true;
+    this.on = function (name) {
+      if (typeof name != 'undefined') {
+        streams[name].on();
+      } else {
+        opts.enabled = true;
+      }
     };
     
-    this.off = function () {
-      opts.enabled = false;
+    this.off = function (name) {
+      if (typeof name != 'undefined') {
+        streams[name].off();
+      } else {
+        opts.enabled = false;
+      }
     };
     
     this.logs = function () {
