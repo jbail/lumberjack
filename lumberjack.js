@@ -1,5 +1,5 @@
 /*!
- * Lumberjack JavaScript Utility v0.2
+ * Lumberjack JavaScript Utility v0.3
  * http://github.com/jbail/lumberjack
  *
  * Copyright 2013 Jeff Bail
