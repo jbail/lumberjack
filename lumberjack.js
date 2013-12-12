@@ -11,7 +11,7 @@
 (function () {
 
   function Console(console, name, options) {
-    var options = options || {},
+    options = options || {},
         opts = {
           enabled: typeof options.enabled != 'undefined' ? options.enabled : true,
           color: typeof options.color != 'undefined' ? options.color : '#bada55',
@@ -28,7 +28,7 @@
       args = argumentsToArray(args);
 
       if (opts.enabled) {
-        if (colorSupported && name != undefined && colorTypes.indexOf(type) != -1) {
+        if (colorSupported && name !== undefined && colorTypes.indexOf(type) != -1) {
           //hat tip: http://stackoverflow.com/questions/7505623/colors-in-javascript-console
           args.unshift('%c ' + name + ' ', 'color:' + opts.color + '; background:' + opts.background + '; font-weight:bold');
           console[type].apply(console, args);
@@ -38,13 +38,13 @@
         }
       }
 
-      args.push(new Date()) //add timestamp
+      args.push(new Date()); //add timestamp
       logs.push(args);
-    };
+    }
 
     function argumentsToArray(arguments) {
       return Array.prototype.slice.call(arguments, 0);
-    };
+    }
 
     function isColorSupported() {
       //it feels dirty doing user agent browser detection, but i don't think
@@ -85,38 +85,38 @@
 
     this.logs = function () {
       return logs;
-    }
+    };
 
     this.color = function (color) {
       opts.color = color;
-    }
+    };
 
     this.background = function (background) {
       opts.background = background;
-    }
+    };
 
     //built-in console methods we're overriding
-    this.assert = function () { log(arguments, 'assert'); }
-    this.clear = function () { log(arguments, 'clear'); }
-    this.count = function () { log(arguments, 'count'); }
-    this.debug = function () { log(arguments, 'debug'); }
-    this.dir = function () { log(arguments, 'dir'); }
-    this.dirxml = function () { log(arguments, 'dirxml'); }
-    this.error = function () { log(arguments, 'error'); }
-    this.exception = function () { log(arguments, 'exception'); }
-    this.group = function () { log(arguments, 'group'); }
-    this.groupCollapsed = function () { log(arguments, 'groupCollapsed'); }
-    this.groupEnd = function () { log(arguments, 'groupEnd'); }
-    this.info = function () { log(arguments, 'info'); }
-    this.log = function () { log(arguments, 'log'); }
-    this.profile = function () { log(arguments, 'profile'); }
-    this.profileEnd = function () { log(arguments, 'profileEnd'); }
-    this.table = function () { log(arguments, 'table'); }
-    this.time = function () { log(arguments, 'time'); }
-    this.timeEnd = function () { log(arguments, 'timeEnd'); }
-    this.timeStamp = function () { log(arguments, 'timeStamp'); }
-    this.trace = function () { log(arguments, 'trace'); }
-    this.warn = function () { log(arguments, 'warn'); }
+    this.assert = function () { log(arguments, 'assert'); };
+    this.clear = function () { log(arguments, 'clear'); };
+    this.count = function () { log(arguments, 'count'); };
+    this.debug = function () { log(arguments, 'debug'); };
+    this.dir = function () { log(arguments, 'dir'); };
+    this.dirxml = function () { log(arguments, 'dirxml'); };
+    this.error = function () { log(arguments, 'error'); };
+    this.exception = function () { log(arguments, 'exception'); };
+    this.group = function () { log(arguments, 'group'); };
+    this.groupCollapsed = function () { log(arguments, 'groupCollapsed'); };
+    this.groupEnd = function () { log(arguments, 'groupEnd'); };
+    this.info = function () { log(arguments, 'info'); };
+    this.log = function () { log(arguments, 'log'); };
+    this.profile = function () { log(arguments, 'profile'); };
+    this.profileEnd = function () { log(arguments, 'profileEnd'); };
+    this.table = function () { log(arguments, 'table'); };
+    this.time = function () { log(arguments, 'time'); };
+    this.timeEnd = function () { log(arguments, 'timeEnd'); };
+    this.timeStamp = function () { log(arguments, 'timeStamp'); };
+    this.trace = function () { log(arguments, 'trace'); };
+    this.warn = function () { log(arguments, 'warn'); };
   }
 
 
