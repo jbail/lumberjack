@@ -42,8 +42,8 @@
       logs.push(args);
     }
 
-    function argumentsToArray(arguments) {
-      return Array.prototype.slice.call(arguments, 0);
+    function argumentsToArray(args) {
+      return Array.prototype.slice.call(args, 0);
     }
 
     function isColorSupported() {
