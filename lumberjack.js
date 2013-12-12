@@ -16,7 +16,7 @@
           enabled: typeof options.enabled != 'undefined' ? options.enabled : true,
           color: typeof options.color != 'undefined' ? options.color : '#bada55',
           background: typeof options.background != 'undefined' ? options.background : '#111'
-        }, 
+        },
         colorTypes = 'dir|dirxml|error|info|log|warn',
         colorSupported = isColorSupported(),
         streams = {}, logs = [];
@@ -26,7 +26,7 @@
     //private
     function log(args, type) {
       args = argumentsToArray(args);
-      
+
       if (opts.enabled) {
         if (colorSupported && name != undefined && colorTypes.indexOf(type) != -1) {
           //hat tip: http://stackoverflow.com/questions/7505623/colors-in-javascript-console
@@ -47,8 +47,8 @@
     };
 
     function isColorSupported() {
-      //it feels dirty doing user agent browser detection, but i don't think 
-      //there's another way to detemine if the console supports color. 
+      //it feels dirty doing user agent browser detection, but i don't think
+      //there's another way to detemine if the console supports color.
       var ua = navigator.userAgent.toLowerCase();
       return ua.indexOf('firefox') != -1 || ua.indexOf('chrome') != -1;
     }
@@ -63,7 +63,7 @@
         stream = new Console(console, name, options);
         streams[name] = stream;
       }
-      
+
       return stream;
     };
 
@@ -74,7 +74,7 @@
         opts.enabled = true;
       }
     };
-    
+
     this.off = function (name) {
       if (typeof name != 'undefined') {
         streams[name].off();
@@ -82,11 +82,11 @@
         opts.enabled = false;
       }
     };
-    
+
     this.logs = function () {
       return logs;
     }
-    
+
     this.color = function (color) {
       opts.color = color;
     }
@@ -96,13 +96,13 @@
     }
 
     //built-in console methods we're overriding
-    this.assert = function () { log(arguments, 'assert'); } 
-    this.clear = function () { log(arguments, 'clear'); }   
+    this.assert = function () { log(arguments, 'assert'); }
+    this.clear = function () { log(arguments, 'clear'); }
     this.count = function () { log(arguments, 'count'); }
     this.debug = function () { log(arguments, 'debug'); }
     this.dir = function () { log(arguments, 'dir'); }
     this.dirxml = function () { log(arguments, 'dirxml'); }
-    this.error = function () { log(arguments, 'error'); }  
+    this.error = function () { log(arguments, 'error'); }
     this.exception = function () { log(arguments, 'exception'); }
     this.group = function () { log(arguments, 'group'); }
     this.groupCollapsed = function () { log(arguments, 'groupCollapsed'); }
